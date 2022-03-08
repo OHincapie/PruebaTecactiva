@@ -1,0 +1,36 @@
+.nav{
+    align-items: center;
+    margin: auto 0;
+    
+}
+nav > a {
+    padding: 2.5px;
+    margin-right: 5px;
+    text-decoration: none;
+  }
+  nav > a.active {
+    background-color: blue;
+  }
+  .header-row{
+    width: 100%;
+  }
+  .header-toolbar {
+    margin-bottom: 20px;
+  }
+
+.header{
+    background-color: #fff;
+}
+
+.imagen-header{
+    align-items: center;
+
+}
+.imagen-header img{
+    height: 55px;
+}
+
+.cont-header{
+    display: flex;
+    justify-content: space-between;
+}

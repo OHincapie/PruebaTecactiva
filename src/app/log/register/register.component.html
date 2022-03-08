@@ -1,0 +1,129 @@
+  <mat-stepper linear #stepper class="all">
+    <mat-step label="Ingresa usuario y clave" [stepControl]="form" >
+        <div class="container--form">
+            <form [formGroup]="form" (ngSubmit)="login($event)">
+              <mat-card class="card">
+                <mat-card-header>
+                  <mat-card-title>Registro</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  <div class="row">
+                    <div class="col-xs">
+                      <mat-form-field>
+                        <input placeholder="Email"  formControlName="email" matInput type="email" required >
+                      </mat-form-field>
+                      <div *ngIf="form.get('email')?.errors && form.get('email')?.touched" class="error">
+                        Debe ser un correo valido.              
+                      </div>
+          
+                    </div>
+          
+                  </div>
+                  <div class="row">
+                    <div class="col-xs">
+                      <mat-form-field>
+                        <input placeholder="password" formControlName="password" matInput type="password">
+                      </mat-form-field>
+          
+                      <div *ngIf="form.get('password')?.errors && form.get('password')?.touched" class="error">
+                        Contraseña minimo de 8 caracteres.
+                      </div>
+                    </div>
+                  </div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button [disabled]="form.invalid" mat-raised-button type="submit" matStepperNext>Registro</button>
+                </mat-card-actions>
+              </mat-card>
+          
+            </form>
+          </div>
+    </mat-step>
+    <mat-step label="Datos personales" [stepControl]="formDatos" [optional]="isOptional">
+        <div class="container--form">
+        <form [formGroup]="formDatos" (ngSubmit)="datos($event)">
+            <mat-card class="card">
+              <mat-card-header>
+                <mat-card-title>Tus datos.</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <div class="row">
+                  <div class="col-xs">
+                    <mat-form-field>
+                      <input placeholder="Nombre"  formControlName="nombre" matInput type="text" required >
+                    </mat-form-field>
+                    <div *ngIf="form.get('nombre')?.errors && form.get('nombre')?.touched" class="error">
+                      Debes ingresar tu nombre.              
+                    </div>
+                  </div>
+        
+                </div>
+                <div class="row">
+                  <div class="col-xs">
+                    <mat-form-field>
+                      <input placeholder="Apellido" formControlName="apellido" matInput type="text">
+                    </mat-form-field>
+        
+                    <div *ngIf="form.get('apellido')?.errors && form.get('apellido')?.touched" class="error">
+                      Debes ingresar tu apellido.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs">
+                      <mat-form-field>
+                        <input placeholder="Edad" formControlName="edad" matInput type="number">
+                      </mat-form-field>
+          
+                      <div *ngIf="form.get('apellido')?.errors && form.get('apellido')?.touched" class="error">
+                        Debes ingresar tu edad.
+                      </div>
+                    </div>
+                  </div>
+              </mat-card-content>
+              <mat-card-actions>
+                <button [disabled]="form.invalid" mat-raised-button type="submit" matStepperNext>Siguiente</button>
+              </mat-card-actions>
+            </mat-card>
+          </form>
+        </div>
+    </mat-step>
+    <mat-step>
+        <div class="container--form">
+            <mat-card class="card">
+                <mat-card-header>
+                  <mat-card-title>Tu registro.</mat-card-title>
+                </mat-card-header>
+                <mat-card-content style="margin-top: 5px;">
+                  <div class="row">
+                    <div class="col-xs">
+                      <p><strong>Nombre:</strong></p>
+                    </div>
+                    <div class="col-xs">
+                        <p><strong>Nombre:</strong></p>
+                      </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs">
+                      
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                      <div class="col-xs">
+                        
+                      </div>
+                    </div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button [disabled]="form.invalid" mat-raised-button type="submit" matStepperNext>Siguiente</button>
+                </mat-card-actions>
+              </mat-card>
+
+
+            
+        </div>
+      
+    </mat-step>
+  </mat-stepper>
