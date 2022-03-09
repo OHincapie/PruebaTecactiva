@@ -1,7 +1,7 @@
 
 <div class="full-container">
 <div class="imagen--log">
-    <img src="assets/img/analytics.png" alt="Analytics">
+    <img loading="lazy" src="assets/img/analytics.png" alt="Analytics">
 </div>
 
 <div class="container--form">
@@ -39,10 +39,12 @@
                   <div class="error">Las credenciales no coinciden</div>
               </div>
           </div>
+          
         </mat-card-content>
         <mat-card-actions>
           <button [disabled]="form.invalid" mat-raised-button type="submit">Entrar</button>
         </mat-card-actions>
+        <span><a routerLink="/user/password">¿No recuerdas tu contraseña?</a></span>
       </mat-card>
   
     </form>

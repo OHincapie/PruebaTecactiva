@@ -6,9 +6,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {LogRoutingModule} from './log-routing.module';
 import {MaterialModule} from './../material/material.module';
 import { HttpClientModule } from '@angular/common/http';
+import { PasswordComponent } from './password/password.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, PasswordComponent],
   imports: [
     CommonModule,
     LogRoutingModule,

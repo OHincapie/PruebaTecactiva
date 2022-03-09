@@ -1,0 +1,27 @@
+.contenedor--footer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    
+}
+
+.columna{
+    padding: 15px 50px;
+    display: flex;
+    flex-direction: column;
+} 
+.columna:nth-child(1){
+    display: block;
+}
+.titulo{
+    font-size: 22px;
+    font-weight: 700;
+}
+.opcion{
+    padding-top: 10px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #fff;
+}

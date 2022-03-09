@@ -35,25 +35,20 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(event: Event) {
-    event.preventDefault();
+
+  confirmar(){
     console.log(this.form.value);
+    console.log(this.formDatos.value);
     localStorage.setItem('Registro',JSON.stringify(this.form.value) )
-    // Swal.fire('Registrado!',
-    // 'Te has registrado con exito!',
-    // 'success')
-    // this.router.navigateByUrl('/user/login')
+    localStorage.setItem('Datos',JSON.stringify(this.formDatos.value) )
+    
+    Swal.fire('Registrado!',
+    'Te has registrado con exito!',
+    'success')
+    this.router.navigateByUrl('/user/login')
   }
 
-  datos(event: Event) {
-    event.preventDefault();
-    console.log(this.form.value);
-    localStorage.setItem('Datos',JSON.stringify(this.form.value) )
-    // Swal.fire('Registrado!',
-    // 'Te has registrado con exito!',
-    // 'success')
-    // this.router.navigateByUrl('/user/login')
-  }
+  
 
  
 }

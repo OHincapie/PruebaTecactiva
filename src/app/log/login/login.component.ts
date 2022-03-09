@@ -35,7 +35,8 @@ export class LoginComponent implements OnInit {
     event.preventDefault();
     console.log(this.form.value);
     const login= JSON.stringify(this.form.value); 
-    const registro= localStorage.getItem('Registro')
+    const registro= localStorage.getItem('Registro');
+    console.log(JSON.parse(registro ||'{}'))
     if(login==registro){
       this.globalService.login=true;
       console.log(this.globalService.login)
@@ -43,7 +44,7 @@ export class LoginComponent implements OnInit {
       Swal.fire('Iniciaste sesión!',
     'Iniciaste sesión con exito!',
     'success')
-      this.router.navigateByUrl('/marvelDex');
+      // this.router.navigateByUrl('/marvelDex');
     } else{
       this.loginAlert=true;
     }

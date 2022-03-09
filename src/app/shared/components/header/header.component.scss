@@ -1,12 +1,13 @@
 .nav{
     align-items: center;
     margin: auto 0;
-    
 }
 nav > a {
-    padding: 2.5px;
+    padding: 2.5px 5px;
     margin-right: 5px;
     text-decoration: none;
+    color: #fff;
+    font-size: 15px;
   }
   nav > a.active {
     background-color: blue;
@@ -18,8 +19,12 @@ nav > a {
     margin-bottom: 20px;
   }
 
+  .link{
+    
+  }
 .header{
-    background-color: #fff;
+  background: rgb(74,36,175);
+  background: linear-gradient(90deg, rgba(74,36,175,1) 0%, rgba(134,43,158,1) 50%, rgba(74,36,175,1) 100%);
 }
 
 .imagen-header{

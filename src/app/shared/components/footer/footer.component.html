@@ -1,1 +1,19 @@
-<p>footer works!</p>
+<footer>
+    <div class="contenedor--footer">
+        <div class="columna">
+            <img src="assets/img/logosoft.png" alt="Logo">
+            <p>Soluciones a nivel tecnológico, infraestructura, fabrica de software, licenciamiento, outsourcing y más.</p>
+        </div>
+        <div class="columna">
+            <div class="titulo">Navega</div>
+            <a href="" class="opcion">Inicio</a>
+            <a href="" class="opcion">Dashboard</a>
+        </div>
+        <div class="columna">
+            <div class="titulo">Sesión</div>
+            <a *ngIf="globalService.login" class="opcion">Log out</a>
+            <a *ngIf="!globalService.login" class="opcion">Log in</a>
+            <a href="" class="opcion">Registro</a>
+        </div>
+    </div>
+</footer>

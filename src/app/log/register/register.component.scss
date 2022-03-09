@@ -21,11 +21,27 @@
  margin-bottom: 10px;
 }
 
-mat-form-field {
-    
+mat-form-field {   
     width: 300px;
 }
 
+.resumen{
+  font-size: 18px;
+  padding-top: 20px;
+}
+.subtitulo{
+  font-size: 22px;
+  color: #4a24af;
+  font-weight: 700;
+}
+.campo{
+  padding: 10px 0;
+}
 .error {
     background-color: #ff6961;
-  }
+}
+
+button{
+  background-color: #4a24af;
+  color: #fff;
+}

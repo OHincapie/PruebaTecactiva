@@ -7,13 +7,14 @@
                     <img src="assets/img/logosoft.png" alt="Marvel logo">
                 </div>
                 <nav class="nav" *ngIf="!globalService.login">
-                    <a mat-raised-button routerLink="/user/register">Registrarse</a>
-                    <a mat-raised-button routerLink="/user/login">Log in</a>                 
+                    <a routerLink="" >Inicio</a> 
+                    <a routerLink="/user/register">Registrarse</a>
+                    <a routerLink="/user/login">Login</a>                 
                 </nav>
                 <nav class="nav" *ngIf="globalService.login">
-                    <a mat-raised-button routerLink="" >Inicio</a>                 
-                    <a mat-raised-button routerLink="" >Dashboard</a>                 
-                    <a mat-raised-button routerLink="/user/login" (click)="logOut()">Log out</a>                 
+                    <a routerLink="" >Inicio</a>                 
+                    <a routerLink="" >Dashboard</a>                 
+                    <a routerLink="/user/login" (click)="logOut()">Logout</a>                 
                 </nav>
 
             </div>

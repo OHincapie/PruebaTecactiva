@@ -1,7 +1,8 @@
   <mat-stepper linear #stepper class="all">
-    <mat-step label="Ingresa usuario y clave" [stepControl]="form" >
+    <!-- [stepControl]="form"  -->
+    <mat-step label="Ingresa usuario y clave" [stepControl]="form">
         <div class="container--form">
-            <form [formGroup]="form" (ngSubmit)="login($event)">
+            <form [formGroup]="form" >
               <mat-card class="card">
                 <mat-card-header>
                   <mat-card-title>Registro</mat-card-title>
@@ -32,16 +33,17 @@
                   </div>
                 </mat-card-content>
                 <mat-card-actions>
-                  <button [disabled]="form.invalid" mat-raised-button type="submit" matStepperNext>Registro</button>
+                  <button [disabled]="form.invalid" mat-raised-button  matStepperNext>Registro</button>
                 </mat-card-actions>
               </mat-card>
           
             </form>
           </div>
     </mat-step>
+    <!-- [stepControl]="formDatos" [optional]="isOptional" -->
     <mat-step label="Datos personales" [stepControl]="formDatos" [optional]="isOptional">
         <div class="container--form">
-        <form [formGroup]="formDatos" (ngSubmit)="datos($event)">
+        <form [formGroup]="formDatos" >
             <mat-card class="card">
               <mat-card-header>
                 <mat-card-title>Tus datos.</mat-card-title>
@@ -83,32 +85,32 @@
                   </div>
               </mat-card-content>
               <mat-card-actions>
-                <button [disabled]="form.invalid" mat-raised-button type="submit" matStepperNext>Siguiente</button>
+                <button [disabled]="formDatos.invalid" mat-raised-button matStepperNext>Siguiente</button>
               </mat-card-actions>
             </mat-card>
           </form>
         </div>
     </mat-step>
-    <mat-step>
+    <mat-step label="Confirmar">
         <div class="container--form">
             <mat-card class="card">
                 <mat-card-header>
                   <mat-card-title>Tu registro.</mat-card-title>
                 </mat-card-header>
                 <mat-card-content style="margin-top: 5px;">
-                  <div class="row">
-                    <div class="col-xs">
-                      <p><strong>Nombre:</strong></p>
+                  <div class="resumen">
+                    <div class="campo">
+                      <p><strong class="subtitulo">Nombre: </strong>{{formDatos.value.nombre}} {{formDatos.value.apellido}}</p>
                     </div>
-                    <div class="col-xs">
-                        <p><strong>Nombre:</strong></p>
-                      </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-xs">
-                      
+
+                    <div class="campo">
+                      <p><strong class="subtitulo">Edad: </strong>{{formDatos.value.edad}}</p>
                     </div>
-                  </div>
+
+                    <div class="campo">
+                      <p><strong class="subtitulo">Email: </strong>{{form.value.email}}</p>
+                    </div>
+                   </div>
   
                   <div class="row">
                       <div class="col-xs">
@@ -117,7 +119,7 @@
                     </div>
                 </mat-card-content>
                 <mat-card-actions>
-                  <button [disabled]="form.invalid" mat-raised-button type="submit" matStepperNext>Siguiente</button>
+                  <button class="boton" mat-raised-button (click)="confirmar()" matStepperNext>Confirmar e iniciar sesión</button>
                 </mat-card-actions>
               </mat-card>
 
