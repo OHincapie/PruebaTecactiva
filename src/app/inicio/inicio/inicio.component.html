@@ -22,4 +22,20 @@
     <section class="sec--video">
         <youtube-player videoId="PRQCAL_RMVo"></youtube-player>
     </section>
+
+    <section class="grilla">
+        <app-inicio-part *ngFor="let num of number"></app-inicio-part>
+    </section>
+
+    <section class="suscripcion">
+        <h2>Suscríbete a nuestro boletín de noticias</h2>
+
+        <input type="email" placeholder="Email">
+
+        <div class="boton--sub">
+            <button mat-raised-button (click)="suscrito()">Suscribir</button>
+        </div>
+        
+
+    </section>
 </div>

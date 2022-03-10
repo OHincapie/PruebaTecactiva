@@ -4,7 +4,8 @@
             <div class="row between-xs cont-header">
 
                 <div class="imagen-header">
-                    <img src="assets/img/logosoft.png" alt="Marvel logo">
+                    <a routerLink=""><img src="assets/img/logosoft.png" alt="logo"></a>
+                    
                 </div>
                 <nav class="nav" *ngIf="!globalService.login">
                     <a routerLink="" >Inicio</a> 
@@ -13,7 +14,7 @@
                 </nav>
                 <nav class="nav" *ngIf="globalService.login">
                     <a routerLink="" >Inicio</a>                 
-                    <a routerLink="" >Dashboard</a>                 
+                    <a routerLink="/dashboard" >Dashboard</a>                 
                     <a routerLink="/user/login" (click)="logOut()">Logout</a>                 
                 </nav>
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-inicio',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
   apiLoaded = false;
+  number=Array(6);
   constructor() { }
 
   ngOnInit(): void {
@@ -18,6 +20,12 @@ export class InicioComponent implements OnInit {
       document.body.appendChild(tag);
       this.apiLoaded = true;
     }
+  }
+
+  suscrito(){
+    Swal.fire('Te has suscrito!',
+    'Bienvenido al mejor equipo!',
+    'success')
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {GlobalService} from '../../../services/global.service'
+import {GlobalService} from '../../../services/global.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +9,7 @@ import {GlobalService} from '../../../services/global.service'
 })
 export class FooterComponent implements OnInit {
 
-  constructor(public globalService:GlobalService) { }
+  constructor(public globalService:GlobalService, private router: Router) { }
 
   ngOnInit(): void {
     this.globalService.login=false;
@@ -16,6 +17,7 @@ export class FooterComponent implements OnInit {
 
   logOut(){
     this.globalService.login=false;
+    this.router.navigateByUrl('/user/login');
   }
 
 }

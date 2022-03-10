@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GlobalService} from '../../../services/global.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import {GlobalService} from '../../../services/global.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public globalService:GlobalService) { }
+  constructor(public globalService:GlobalService, private router: Router,) { }
 
   ngOnInit(): void {
     this.globalService.login=false;
@@ -16,6 +17,7 @@ export class HeaderComponent implements OnInit {
 
   logOut(){
     this.globalService.login=false;
+    this.router.navigateByUrl('/user/login');
   }
 
 }

@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
       Swal.fire('Iniciaste sesión!',
     'Iniciaste sesión con exito!',
     'success')
-      // this.router.navigateByUrl('/marvelDex');
+      this.router.navigateByUrl('');
     } else{
       this.loginAlert=true;
     }

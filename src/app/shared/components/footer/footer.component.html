@@ -6,14 +6,14 @@
         </div>
         <div class="columna">
             <div class="titulo">Navega</div>
-            <a href="" class="opcion">Inicio</a>
-            <a href="" class="opcion">Dashboard</a>
+            <a routerLink="" class="opcion">Inicio</a>
+            <a routerLink="/dashboard" class="opcion">Dashboard</a>
         </div>
         <div class="columna">
             <div class="titulo">Sesión</div>
-            <a *ngIf="globalService.login" class="opcion">Log out</a>
-            <a *ngIf="!globalService.login" class="opcion">Log in</a>
-            <a href="" class="opcion">Registro</a>
+            <a *ngIf="globalService.login" (click)="logOut()" class="opcion">Log out</a>
+            <a *ngIf="!globalService.login" routerLink="/user/login" class="opcion">Log in</a>
+            <a routerLink="/user/registro" class="opcion">Registro</a>
         </div>
     </div>
 </footer>
