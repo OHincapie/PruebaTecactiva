@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public globalService:GlobalService, private router: Router,) { }
+  id=1;
+  constructor(public globalService:GlobalService, private router: Router,) { console.log('hola mundo')}
 
   ngOnInit(): void {
     this.globalService.login=false;
@@ -18,6 +19,24 @@ export class HeaderComponent implements OnInit {
   logOut(){
     this.globalService.login=false;
     this.router.navigateByUrl('/user/login');
+  }
+  cambio(){
+    
+    if(this.id==1){
+      this.id=2
+      console.log('1')
+      return
+      
+    } 
+    if(this.id==2){
+      this.id=1
+      console.log('2')
+      return
+    }
+  }
+
+  ocultar(){
+    this.id=1
   }
 
 }

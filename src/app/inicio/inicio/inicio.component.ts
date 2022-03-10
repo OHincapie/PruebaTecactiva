@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef , OnChanges} from '@angular/core';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,8 +9,14 @@ import Swal from 'sweetalert2';
 export class InicioComponent implements OnInit {
   apiLoaded = false;
   number=Array(6);
-  constructor() { }
+  w:number;
+  h:number;
+  constructor(private _changeDetectorRef: ChangeDetectorRef) { }
 
+  ngOnChanges(){
+    console.log("cambio")
+  }
+  
   ngOnInit(): void {
     if (!this.apiLoaded) {
       // This code loads the IFrame Player API code asynchronously, according to the instructions at
@@ -20,7 +26,15 @@ export class InicioComponent implements OnInit {
       document.body.appendChild(tag);
       this.apiLoaded = true;
     }
+
+    if(screen.width<500){
+      this.w=300;
+      this.h=this.w*0.6
+    }
+    console.log()
   }
+
+  
 
   suscrito(){
     Swal.fire('Te has suscrito!',

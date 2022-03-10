@@ -14,17 +14,18 @@
     margin-left: auto;
   }
   
-  @media (min-width: 576px) {
+  @media (min-width: 768px) {
     .container {
       max-width: 1110px;
-      padding-right: 16px;
-      padding-left: 16px;
+      
     }
   }
   
   html, body { height: 100%;font-family: 'Comic Neue', cursive;
+    margin: 0;
+    padding: 0;
     }
-  body { margin: 0; font-family: 'Comic Neue', cursive; }
+  body { margin: 0; font-family: 'Comic Neue', cursive; min-width: fit-content; }
   
   img {
     max-width: 100%;

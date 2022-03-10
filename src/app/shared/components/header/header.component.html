@@ -1,24 +1,41 @@
-<mat-toolbar class="header" >
-    <mat-toolbar-row>
-        <div class="container">
-            <div class="row between-xs cont-header">
+<div class="header">
+    <mat-toolbar class="header--toolbar">
 
-                <div class="imagen-header">
-                    <a routerLink=""><img src="assets/img/logosoft.png" alt="logo"></a>
+        <mat-toolbar-row>
+
+            <div class="container">
+                <div class="row between-xs cont-header">
+
+                    <div class="imagen-header">
+                        <a routerLink="" class="img-header"><img src="assets/img/logosoft.png" alt="logo"></a>
+
+                    </div>
                     
-                </div>
-                <nav class="nav" *ngIf="!globalService.login">
-                    <a routerLink="" >Inicio</a> 
-                    <a routerLink="/user/register">Registrarse</a>
-                    <a routerLink="/user/login">Login</a>                 
-                </nav>
-                <nav class="nav" *ngIf="globalService.login">
-                    <a routerLink="" >Inicio</a>                 
-                    <a routerLink="/dashboard" >Dashboard</a>                 
-                    <a routerLink="/user/login" (click)="logOut()">Logout</a>                 
-                </nav>
+                    <button class="toggle" (click)="cambio()">
+                        <mat-icon>menu</mat-icon>   
+                    </button>
+                        
+                    
+                    <nav class="nav" *ngIf="!globalService.login" [ngClass]="{'nav-visible': id==2}">
+                        <a routerLink="" (click)="ocultar()">Inicio</a>
+                        <a routerLink="/user/register" (click)="ocultar()">Registrarse</a>
+                        <a routerLink="/user/login" (click)="ocultar()">Login</a>
+                    </nav>
+                    <nav class="nav" *ngIf="globalService.login" [ngClass]="{'nav-visible': id==2}">
+                        <a routerLink="" (click)="ocultar()">Inicio</a>
+                        <a routerLink="/dashboard" (click)="ocultar()">Dashboard</a>
+                        <a routerLink="/user/login" (click)="logOut()" (click)="ocultar()">Logout</a>
+                    </nav>
+<!-- 
+                    <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+                        <mat-icon>menu</mat-icon>
+                    </button> -->
 
+
+
+
+                </div>
             </div>
-        </div>
-    </mat-toolbar-row>
-</mat-toolbar>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
